@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/*
+font-family: 'Lato', sans-serif;
+font-family: 'Lora', serif;
+font-family: 'Noto Serif', serif;
+font-family: 'Nunito', sans-serif;
+*/
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 5vh 5vw;
+
+    font-family: 'Nunito', sans-serif;
+    color: #282828;
+}
+
+p {
+    line-height: 1.5;
+}
+
+
+// STYLE MODULES
+
+.btn {
+    text-transform: uppercase;
+    border: 1px solid black;
+    color: black;
+    font-weight: 500;
+    border-radius: 3px;
+    padding: .4em .8em;
+    font-size: .65rem;
+    text-decoration: none;
+}

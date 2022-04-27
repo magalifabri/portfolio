@@ -1,0 +1,25 @@
+.intro {
+    min-height: 90vh; // 100 - 10 for body padding
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1rem;
+
+    &__title {
+        font-size: 3rem;
+        font-family: 'Lora', serif;
+    }
+
+    &__subtitle {
+        text-transform: uppercase;
+        font-weight: 400;
+        word-spacing: .1rem;
+    }
+
+    &__description {
+        max-width: 50ch;
+        font-size: 1.125rem;
+    }
+}

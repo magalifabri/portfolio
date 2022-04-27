@@ -1,8 +1,12 @@
+import Intro from "./components/Intro";
+import './styles/general.scss';
+
+
 function App() {
   return (
-    <p>
-    {/*    */}
-    </p>
+    <>
+        <Intro/>
+    </>
   );
 }
 
