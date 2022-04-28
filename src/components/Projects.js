@@ -18,9 +18,11 @@ const Projects = () => {
 
             <div className="projects__cards-container">
 
-                {projects.map(project => {
+                {projects.map((project, index) => {
                     return (
-                        <div className="project-card">
+                        <div className="project-card"
+                             key={index}
+                        >
                             <p className="project-card__title">
                                 {project.name}
                             </p>
