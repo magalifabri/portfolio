@@ -26,13 +26,17 @@ const Projects = () => {
                             </p>
 
                             <div className="project-card__screenshots-container">
-                                <img className="project-card__screenshot project-card__screenshot--desktop"
-                                     src={project.desktopScreenshot} alt=""
-                                />
+                                {project.desktopScreenshot &&
+                                    <img className="project-card__screenshot project-card__screenshot--desktop"
+                                         src={project.desktopScreenshot} alt=""
+                                    />
+                                }
 
-                                <img className="project-card__screenshot project-card__screenshot--mobile"
-                                     src={project.mobileScreenshot} alt=""
-                                />
+                                {project.mobileScreenshot &&
+                                    <img className="project-card__screenshot project-card__screenshot--mobile"
+                                         src={project.mobileScreenshot} alt=""
+                                    />
+                                }
                             </div>
 
                             <p className="project-card__description">
@@ -40,11 +44,11 @@ const Projects = () => {
                             </p>
 
                             <div className="project-card__links-container">
-                                <a className="project-card__link" href={project.github}>
+                                <a className="project-card__link btn" href={project.github}>
                                     source code
                                 </a>
 
-                                <a className="project-card__link" href={project.homepage}>
+                                <a className="project-card__link btn" href={project.homepage}>
                                     homepage
                                 </a>
                             </div>

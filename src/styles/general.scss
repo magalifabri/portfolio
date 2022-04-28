@@ -8,6 +8,9 @@ font-family: 'Nunito', sans-serif;
 */
 
 
+$black: #282828;
+
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,7 +23,7 @@ body {
     padding: 5vh 5vw;
 
     font-family: 'Nunito', sans-serif;
-    color: #282828;
+    color: $black;
 }
 
 p {
@@ -31,14 +34,17 @@ p {
 // STYLE MODULES
 
 .btn {
-    text-transform: uppercase;
-    border: 1px solid black;
-    color: black;
-    font-weight: 500;
+    padding: .5em 1em;
+
+    border: 1px solid $black;
     border-radius: 3px;
-    padding: .4em .8em;
+    font-family: 'Lato', sans-serif;
+
+    text-transform: uppercase;
+    color: $black;
     font-size: .65rem;
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
 .heading {

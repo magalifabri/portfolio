@@ -8,7 +8,7 @@
     &__cards-container {
         display: flex;
         flex-direction: column;
-        gap: 3rem;
+        gap: 4rem;
     }
 }
 
@@ -32,13 +32,21 @@
     &__screenshot {
         position: absolute;
 
+        border-radius: 3px;
+        box-shadow:
+                0 0 0 3px white,
+                0 0 0 4px #eaeaea,
+                0 3px 10px rgba(0, 0, 0, 0.15);
+
         &--desktop {
+            top: 1rem;
             max-width: 100%;
             height: auto;
             max-height: 250px;
         }
 
         &--mobile {
+            left: 1rem;
             width: auto;
             max-height: 100%;
         }
@@ -49,7 +57,7 @@
     &__links-container {
         display: flex;
         flex-direction: row;
-        gap: 2rem;
+        gap: 1.5rem;
     }
 }
 
