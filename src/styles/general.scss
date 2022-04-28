@@ -41,13 +41,15 @@ p {
     text-decoration: none;
 }
 
-.header {
-    font-size: 3rem;
-    font-family: 'Lora', serif;
-}
+.heading {
+    &__header {
+        font-size: 3rem;
+        font-family: 'Lora', serif;
+    }
 
-.subheader {
-    text-transform: uppercase;
-    font-weight: 400;
-    word-spacing: .1rem;
+    &__subheader {
+        text-transform: uppercase;
+        font-weight: 400;
+        word-spacing: .1rem;
+    }
 }

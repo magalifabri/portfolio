@@ -4,21 +4,21 @@ import '../styles/Projects.scss';
 
 
 const Projects = () => {
-    console.log(projects);
     return (
         <section className="projects">
-            <p className="projects__header header">
-                Projects
-            </p>
+            <div className="heading">
+                <p className="projects__header heading__header">
+                    Projects
+                </p>
 
-            <p className="projects__subheader subheader">
-                a sampling of my work
-            </p>
+                <p className="projects__subheader heading__subheader">
+                    a sampling of my work
+                </p>
+            </div>
 
             <div className="projects__cards-container">
 
                 {projects.map(project => {
-                    // console.log(project);
                     return (
                         <div className="project-card">
                             <p className="project-card__title">
@@ -52,8 +52,6 @@ const Projects = () => {
                         )
                 })}
             </div>
-
-
         </section>
     );
 };
