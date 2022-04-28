@@ -12,6 +12,8 @@ font-family: 'Nunito', sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+
+    //border: 1px solid lightgray;
 }
 
 body {
@@ -37,4 +39,15 @@ p {
     padding: .4em .8em;
     font-size: .65rem;
     text-decoration: none;
+}
+
+.header {
+    font-size: 3rem;
+    font-family: 'Lora', serif;
+}
+
+.subheader {
+    text-transform: uppercase;
+    font-weight: 400;
+    word-spacing: .1rem;
 }
