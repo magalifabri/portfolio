@@ -29,7 +29,7 @@ const Projects = () => {
         show: {
             transition: {
                 delayChildren: .25,
-                staggerChildren: .25,
+                staggerChildren: .15,
             }
         }
     }
@@ -44,7 +44,7 @@ const Projects = () => {
             y: 0,
             transition: {
                 ease: "easeOut",
-                duration: 1,
+                duration: .5,
             }
         },
     }
