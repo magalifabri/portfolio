@@ -1,10 +1,28 @@
-import React from 'react';
-import {motion} from "framer-motion";
+import React, {useRef, useState} from 'react';
+import {motion, useDomEvent} from "framer-motion";
 import projects from '../data/projects';
 import '../styles/Projects.scss';
 
 
 const Projects = () => {
+    const [zoomedProjectId, setZoomedProjectId] = useState(-1);
+
+    useDomEvent(useRef(window), "scroll", () => setZoomedProjectId(-1));
+
+
+    const toggleZoom = event => {
+        if (zoomedProjectId !== -1) {
+            setZoomedProjectId(-1);
+        } else {
+            setZoomedProjectId(event.target.id);
+        }
+    }
+
+
+    const thisProjectIsOpen = index => {
+        return index == zoomedProjectId;
+    }
+
 
     const projectCardAnimation = {
         hidden: {},
@@ -61,22 +79,38 @@ const Projects = () => {
                             </motion.p>
 
                             <motion.div
-                                className="project-card__screenshots-container"
+                                className={`project-card__screenshots-container ${thisProjectIsOpen(index) ? 'project-card__screenshots-container--open' : ''}`}
+                                id={index}
                                 variants={projectCardElementAnimation}
+                                onClick={toggleZoom}
                             >
-                                {project.desktopScreenshot &&
-                                    <img
-                                        className="project-card__screenshot project-card__screenshot--desktop"
-                                        src={project.desktopScreenshot} alt=""
+                                <div
+                                    className="project-card__screenshots-inner-container">
+                                    <motion.div className="shade"
+                                                animate={{opacity: thisProjectIsOpen(index) ? .9 : 0}}
+                                                onClick={() => setZoomedProjectId(-1)}
                                     />
-                                }
 
-                                {project.mobileScreenshot &&
-                                    <img
-                                        className="project-card__screenshot project-card__screenshot--mobile"
-                                        src={project.mobileScreenshot} alt=""
-                                    />
-                                }
+                                    {project.desktopScreenshot &&
+                                        <motion.img
+                                            className="project-card__screenshot project-card__screenshot--desktop"
+                                            id={index}
+                                            src={project.desktopScreenshot}
+                                            alt=""
+                                            layout
+                                        />
+                                    }
+
+                                    {project.mobileScreenshot &&
+                                        <motion.img
+                                            className="project-card__screenshot project-card__screenshot--mobile"
+                                            id={index}
+                                            src={project.mobileScreenshot}
+                                            alt=""
+                                            layout
+                                        />
+                                    }
+                                </div>
                             </motion.div>
 
                             <motion.p className="project-card__description"

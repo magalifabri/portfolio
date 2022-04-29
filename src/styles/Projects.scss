@@ -99,3 +99,64 @@ $breakPoint: 500px;
         }
     }
 }
+
+
+// SCREENSHOT ZOOM
+
+.project-card__screenshots-container {
+    cursor: zoom-in;
+
+    .shade {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        opacity: 0;
+        background: white;
+    }
+
+    .project-card__screenshot {
+        z-index: -1;
+        transition: z-index 1s, box-shadow 1s ease; // only change z-index after 1s, otherwise shadow overlaps image on deactivation
+    }
+
+    &--open {
+        cursor: zoom-out;
+
+        .project-card__screenshots-inner-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 2rem;
+
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: center;
+            overflow-x: scroll;
+        }
+
+        .shade {
+            pointer-events: auto;
+        }
+
+        .project-card__screenshot {
+            z-index: 2;
+            position: static;
+            display: block;
+            max-height: 90%;
+            max-width: 95%;
+
+            box-shadow:
+                    0 0 0 3px white,
+                    0 0 0 5px #eaeaea,
+                    rgba(0, 0, 0, 0.45) 0px 25px 40px -40px;
+
+            transition: z-index 0s; // overwrite default z-index setting
+        }
+    }
+}
