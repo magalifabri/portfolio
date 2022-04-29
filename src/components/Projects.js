@@ -1,9 +1,37 @@
 import React from 'react';
+import {motion} from "framer-motion";
 import projects from '../data/projects';
 import '../styles/Projects.scss';
 
 
 const Projects = () => {
+
+    const projectCardAnimation = {
+        hidden: {},
+        show: {
+            transition: {
+                delayChildren: .25,
+                staggerChildren: .25,
+            }
+        }
+    }
+
+    const projectCardElementAnimation = {
+        hidden: {
+            opacity: 0,
+            y: 10
+        },
+        show: {
+            opacity: 1,
+            y: 0,
+            transition: {
+                ease: "easeOut",
+                duration: 1,
+            }
+        },
+    }
+
+
     return (
         <section className="projects">
             <div className="heading">
@@ -20,42 +48,61 @@ const Projects = () => {
 
                 {projects.map((project, index) => {
                     return (
-                        <div className="project-card"
-                             key={index}
+                        <motion.div className="project-card"
+                                    key={index}
+                                    variants={projectCardAnimation}
+                                    initial="hidden"
+                                    whileInView="show"
                         >
-                            <p className="project-card__title">
+                            <motion.p className="project-card__title"
+                                      variants={projectCardElementAnimation}
+                            >
                                 {project.name}
-                            </p>
+                            </motion.p>
 
-                            <div className="project-card__screenshots-container">
+                            <motion.div
+                                className="project-card__screenshots-container"
+                                variants={projectCardElementAnimation}
+                            >
                                 {project.desktopScreenshot &&
-                                    <img className="project-card__screenshot project-card__screenshot--desktop"
-                                         src={project.desktopScreenshot} alt=""
+                                    <img
+                                        className="project-card__screenshot project-card__screenshot--desktop"
+                                        src={project.desktopScreenshot} alt=""
                                     />
                                 }
 
                                 {project.mobileScreenshot &&
-                                    <img className="project-card__screenshot project-card__screenshot--mobile"
-                                         src={project.mobileScreenshot} alt=""
+                                    <img
+                                        className="project-card__screenshot project-card__screenshot--mobile"
+                                        src={project.mobileScreenshot} alt=""
                                     />
                                 }
-                            </div>
+                            </motion.div>
 
-                            <p className="project-card__description">
+                            <motion.p className="project-card__description"
+                                      variants={projectCardElementAnimation}
+                            >
                                 {project.description}
-                            </p>
+                            </motion.p>
 
-                            <div className="project-card__links-container">
-                                <a className="project-card__link btn" href={project.github}>
+                            <motion.div
+                                className="project-card__links-container"
+                                variants={projectCardElementAnimation}
+                            >
+                                <a className="project-card__link btn"
+                                   href={project.github}
+                                >
                                     source code
                                 </a>
 
-                                <a className="project-card__link btn" href={project.homepage}>
+                                <a className="project-card__link btn"
+                                   href={project.homepage}
+                                >
                                     homepage
                                 </a>
-                            </div>
-                        </div>
-                        )
+                            </motion.div>
+                        </motion.div>
+                    )
                 })}
             </div>
         </section>
