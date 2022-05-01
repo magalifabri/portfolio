@@ -24,6 +24,10 @@ body {
 
     font-family: 'Nunito', sans-serif;
     color: $black;
+
+    @media only screen and (min-width: 500px) {
+        padding-right: 4rem;
+    } // todo change to 768px
 }
 
 p {
@@ -47,6 +51,26 @@ p {
     letter-spacing: 1px;
 }
 
+.btn2 {
+    @extend .btn;
+
+    min-width: 3rem;
+
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff;
+
+    &__icon {
+        font-size: 1.5rem;
+        color: $black;
+        font-weight: lighter;
+    }
+}
+
 .heading {
     &__header {
         font-size: 3rem;
@@ -58,4 +82,8 @@ p {
         font-weight: 400;
         word-spacing: .1rem;
     }
+}
+
+section + section {
+    margin-top: 5rem;
 }

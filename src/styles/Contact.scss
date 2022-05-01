@@ -1,0 +1,48 @@
+.contact {
+    height: 240px;
+
+    margin-left: -5vw;
+    margin-right: -5vw;
+    @media only screen and (min-width: 500px) {
+        margin-right: -4rem;
+    } // todo change to 768px
+    margin-bottom: -5vh;
+
+    padding: 5vh 5vh;
+
+    background: linear-gradient(#f3f3f3, #ffffff);
+
+    display: flex;
+    flex-direction: column;
+    //align-items: center;
+    //justify-content: space-between;
+    gap: 2rem;
+
+    &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &--bottom {
+            position: static;
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+
+        &--side {
+            position: fixed;
+            right: -.4rem;
+            bottom: 1rem;
+
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            gap: 1rem;
+        }
+    }
+
+    span {
+        overflow: hidden;
+    }
+}
