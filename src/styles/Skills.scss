@@ -1,0 +1,37 @@
+.skills {
+    padding: 1.5rem 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__subsection-header {
+        margin-bottom: 1rem;
+
+        font-size: 1.125rem;
+        color: #b2b2b2;
+    }
+
+    &__cards-container {
+        max-width: 400px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        justify-content: space-between;
+    }
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__icon {
+        font-size: 2.5rem; // icon size
+    }
+
+    &__name {
+        font-size: .75rem;
+    }
+}
