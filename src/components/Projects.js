@@ -4,17 +4,23 @@ import projects from '../data/projects';
 import '../styles/Projects.scss';
 
 
-const Projects = () => {
+const Projects = ({setScreenshotsZoomed}) => {
     const [zoomedProjectId, setZoomedProjectId] = useState(-1);
 
-    useDomEvent(useRef(window), "scroll", () => setZoomedProjectId(-1));
 
+    const closeZoomedScreenshots = () => {
+        setZoomedProjectId(-1);
+        setScreenshotsZoomed(false);
+    }
+
+    useDomEvent(useRef(window), "scroll", () => closeZoomedScreenshots());
 
     const toggleZoom = event => {
         if (zoomedProjectId !== -1) {
-            setZoomedProjectId(-1);
+            closeZoomedScreenshots();
         } else {
             setZoomedProjectId(event.target.id);
+            setScreenshotsZoomed(true);
         }
     }
 
@@ -88,7 +94,7 @@ const Projects = () => {
                                     className="project-card__screenshots-inner-container">
                                     <motion.div className="shade"
                                                 animate={{opacity: thisProjectIsOpen(index) ? .9 : 0}}
-                                                onClick={() => setZoomedProjectId(-1)}
+                                                onClick={() => closeZoomedScreenshots()}
                                     />
 
                                     {project.desktopScreenshot &&

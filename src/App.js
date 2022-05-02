@@ -1,3 +1,4 @@
+import {useState} from "react";
 import Intro from "./components/Intro";
 import Projects from "./components/Projects";
 import Skills from "./components/Skills";
@@ -6,12 +7,15 @@ import './styles/general.scss';
 
 
 function App() {
+    const [screenshotsZoomed, setScreenshotsZoomed] = useState(false);
+
+
     return (
         <>
             <Intro/>
-            <Projects/>
+            <Projects setScreenshotsZoomed={setScreenshotsZoomed}/>
             <Skills/>
-            <Contact/>
+            <Contact screenshotsZoomed={screenshotsZoomed}/>
         </>
     );
 }

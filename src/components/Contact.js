@@ -7,7 +7,7 @@ import {MdOutlineEmail} from "react-icons/md";
 import '../styles/Contact.scss';
 
 
-const Contact = () => {
+const Contact = ({screenshotsZoomed}) => {
     const [isComplete, setIsComplete] = useState(false);
     const {scrollYProgress} = useViewportScroll();
 
@@ -31,7 +31,8 @@ const Contact = () => {
             gap: areBtnsOnBottom() ? '.5rem' : 0,
             opacity: areBtnsOnBottom() ? 1 : .7,
             borderColor: areBtnsOnBottom() ? '#000' : 'rgba(255,255,255,0)',
-            backgroundColor: areBtnsOnBottom() ? '#ffffff' : 'rgba(255,255,255,0)'
+            backgroundColor: areBtnsOnBottom() ? '#ffffff' : 'rgba(255,255,255,0)',
+            x: screenshotsZoomed ? 40 : 0,
         },
 
         hover: {
