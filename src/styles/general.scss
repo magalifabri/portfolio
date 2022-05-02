@@ -54,20 +54,20 @@ p {
 .btn2 {
     @extend .btn;
 
-    min-width: 3rem;
-
     display: flex;
     flex-direction: row;
     gap: .5rem;
     align-items: center;
-    justify-content: center;
 
     background-color: #fff;
 
     &__icon {
         font-size: 1.5rem;
         color: $black;
-        font-weight: lighter;
+    }
+
+    &__collapsing-content {
+        overflow: hidden;
     }
 }
 

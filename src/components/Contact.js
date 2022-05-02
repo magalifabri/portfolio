@@ -23,13 +23,21 @@ const Contact = () => {
     }), [scrollYProgress]);
 
 
+    const areBtnsOnBottom = () => isComplete || isSmallScreen;
+
+
     const btnVariant = {
         toggle: {
-            gap: isComplete || isSmallScreen ? '.5rem' : 0,
+            gap: areBtnsOnBottom() ? '.5rem' : 0,
+            opacity: areBtnsOnBottom() ? 1 : .7,
+            borderColor: areBtnsOnBottom() ? '#000' : 'rgba(255,255,255,0)',
+            backgroundColor: areBtnsOnBottom() ? '#ffffff' : 'rgba(255,255,255,0)'
         },
 
         hover: {
             gap: '.5rem',
+            opacity: 1,
+            backgroundColor: '#fff',
             transition: {
                 duration: .25,
             },
@@ -38,7 +46,7 @@ const Contact = () => {
 
     const spanVariant = {
         toggle: {
-            width: isComplete || isSmallScreen ? 'initial' : 0,
+            width: areBtnsOnBottom() ? 'initial' : 0,
         },
 
         hover: {
@@ -65,8 +73,8 @@ const Contact = () => {
                 </p>
             </div>
 
-            <motion.div className={`contact__btn-wrapper${isComplete || isSmallScreen ? '--bottom' : '--side'}`}>
-                <motion.a className="btn2" href="todo"
+            <motion.div className={`contact__btn-wrapper${areBtnsOnBottom() ? '--bottom' : '--side'}`}>
+                <motion.a className="contact__btn btn2" href="todo"
                           layout
                           variants={btnVariant}
                           initial="toggle"
@@ -74,7 +82,7 @@ const Contact = () => {
                           whileHover="hover"
                           transition={btnTransition}
                 >
-                    <motion.span
+                    <motion.span className="btn2__collapsing-content"
                         variants={spanVariant}
                         transition={btnTransition}
                     >
@@ -84,7 +92,7 @@ const Contact = () => {
                     <MdOutlineEmail className="btn2__icon"/>
                 </motion.a>
 
-                <motion.a className="btn2" href="todo"
+                <motion.a className="contact__btn btn2" href="todo"
                           layout
                           variants={btnVariant}
                           initial="toggle"
@@ -92,17 +100,17 @@ const Contact = () => {
                           whileHover="hover"
                           transition={{...btnTransition, delay: .1}}
                 >
-                    CV
-
-                    <motion.span
+                    <motion.span className="btn2__collapsing-content"
                         variants={spanVariant}
                         transition={{...btnTransition, delay: .1}}
                     >
-                        <HiOutlineDownload className="btn2__icon"/>
+                        GitHub
                     </motion.span>
+
+                    <FaGithub className="btn2__icon"/>
                 </motion.a>
 
-                <motion.a className="btn2" href="todo"
+                <motion.a className="contact__btn btn2" href="todo"
                           layout
                           variants={btnVariant}
                           initial="toggle"
@@ -110,14 +118,14 @@ const Contact = () => {
                           whileHover="hover"
                           transition={{...btnTransition, delay: .2}}
                 >
-                    <motion.span
+                    CV
+
+                    <motion.span className="btn2__collapsing-content"
                         variants={spanVariant}
                         transition={{...btnTransition, delay: .2}}
                     >
-                        GitHub
+                        <HiOutlineDownload className="btn2__icon"/>
                     </motion.span>
-
-                    <FaGithub className="btn2__icon"/>
                 </motion.a>
             </motion.div>
 

@@ -25,6 +25,7 @@
 
         &--bottom {
             position: static;
+
             display: flex;
             flex-direction: row;
             gap: 1rem;
@@ -32,17 +33,12 @@
 
         &--side {
             position: fixed;
-            right: -.4rem;
+            right: 0;
             bottom: 1rem;
 
             display: flex;
             flex-direction: column;
             align-items: end;
-            gap: 1rem;
         }
-    }
-
-    span {
-        overflow: hidden;
     }
 }
