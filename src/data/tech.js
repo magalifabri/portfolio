@@ -24,9 +24,9 @@ export const frontEndTech = [
         color: '#c36291'
     },
     {
-        name: 'JavaScript',
-        icon: <SiJavascript className="skill-card__icon"/>,
-        color: '#ddc02e'
+        name: 'HTML',
+        icon: <FaHtml5 className="skill-card__icon"/>,
+        color: '#d84923'
     },
     {
         name: 'CSS',
@@ -34,9 +34,9 @@ export const frontEndTech = [
         color: '#216db1'
     },
     {
-        name: 'HTML',
-        icon: <FaHtml5 className="skill-card__icon"/>,
-        color: '#d84923'
+        name: 'JavaScript',
+        icon: <SiJavascript className="skill-card__icon"/>,
+        color: '#ddc02e'
     },
 ];
 
@@ -63,7 +63,7 @@ export const backEndTech = [
         color: '#175494'
     },
     {
-        name: 'bash',
+        name: 'bash / CLI',
         icon: <BsTerminalFill className="skill-card__icon"/>,
         color: '#282828'
     },

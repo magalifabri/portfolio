@@ -36,9 +36,7 @@ const SkillsRow = ({skills}) => {
                                 key={index}
                                 variants={childVariant}
                     >
-                        <motion.div className="skill-card__icon-container"
-                                    animate={{color: tech.color}}
-                        >
+                        <motion.div className="skill-card__icon-container">
                             {tech.icon}
                         </motion.div>
 

@@ -5,15 +5,10 @@
     flex-direction: column;
     gap: 2rem;
 
-    &__subsection-header {
-        margin-bottom: 1rem;
-
-        font-size: 1.125rem;
-        color: #b2b2b2;
-    }
-
     &__cards-container {
-        max-width: 400px;
+        align-self: center;
+        width: 100%;
+        max-width: 350px;
 
         display: flex;
         flex-direction: row;
@@ -28,7 +23,8 @@
     align-items: center;
 
     &__icon {
-        font-size: 2.5rem; // icon size
+        font-size: 2rem; // icon size
+        color: #4b4b4b;
     }
 
     &__name {

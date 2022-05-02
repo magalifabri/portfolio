@@ -17,21 +17,9 @@ const Skills = () => {
                 </p>
             </div>
 
-            <div className="skills__subsection">
-                <p className="skills__subsection-header">
-                    front-end
-                </p>
+            <SkillsRow skills={frontEndTech}/>
 
-                <SkillsRow skills={frontEndTech}/>
-            </div>
-
-            <div className="skills__subsection">
-                <p className="skills__subsection-header">
-                    back-end
-                </p>
-
-                <SkillsRow skills={backEndTech}/>
-            </div>
+            <SkillsRow skills={backEndTech}/>
         </section>
     );
 };
