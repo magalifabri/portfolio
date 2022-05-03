@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {motion, useViewportScroll} from "framer-motion";
-import {useMediaQuery} from "react-responsive";
 import {FaGithub} from "react-icons/fa";
 import {HiOutlineDownload} from "react-icons/hi";
 import {MdOutlineEmail} from "react-icons/md";
@@ -9,16 +8,37 @@ import '../styles/Contact.scss';
 
 const Contact = ({screenshotsZoomed}) => {
     const [isComplete, setIsComplete] = useState(false);
+    const [isSmallScreen, setIsSmallScreen] = useState(true);
     const {scrollYProgress} = useViewportScroll();
 
 
-    const isSmallScreen = useMediaQuery(
-        {maxWidth: 500}, undefined, () => {} // todo: set to 768
-    );
+    const debounce = (func, timeout = 300) => {
+        let timer;
+
+        return (...args) => {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                func.apply(this, args);
+            }, timeout);
+        };
+    }
+
+    useEffect(() => {
+        setIsSmallScreen(window.innerWidth < 500); // todo: set to 768
+
+        const handleResize = debounce(() => {
+            setIsSmallScreen(window.innerWidth < 500); // todo: set to 768
+        }, 100);
+
+        window.addEventListener('resize', handleResize);
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        }
+    }, []);
 
 
     useEffect(() => scrollYProgress.onChange(v => {
-        // console.log(v)
         setIsComplete(v >= .95);
     }), [scrollYProgress]);
 
@@ -74,7 +94,8 @@ const Contact = ({screenshotsZoomed}) => {
                 </p>
             </div>
 
-            <motion.div className={`contact__btn-wrapper${areBtnsOnBottom() ? '--bottom' : '--side'}`}>
+            <motion.div
+                className={`contact__btn-wrapper${areBtnsOnBottom() ? '--bottom' : '--side'}`}>
                 <motion.a className="contact__btn btn2" href="todo"
                           layout
                           variants={btnVariant}
@@ -84,8 +105,8 @@ const Contact = ({screenshotsZoomed}) => {
                           transition={btnTransition}
                 >
                     <motion.span className="btn2__collapsing-content"
-                        variants={spanVariant}
-                        transition={btnTransition}
+                                 variants={spanVariant}
+                                 transition={btnTransition}
                     >
                         email
                     </motion.span>
@@ -102,8 +123,8 @@ const Contact = ({screenshotsZoomed}) => {
                           transition={{...btnTransition, delay: .1}}
                 >
                     <motion.span className="btn2__collapsing-content"
-                        variants={spanVariant}
-                        transition={{...btnTransition, delay: .1}}
+                                 variants={spanVariant}
+                                 transition={{...btnTransition, delay: .1}}
                     >
                         GitHub
                     </motion.span>
@@ -122,8 +143,8 @@ const Contact = ({screenshotsZoomed}) => {
                     CV
 
                     <motion.span className="btn2__collapsing-content"
-                        variants={spanVariant}
-                        transition={{...btnTransition, delay: .2}}
+                                 variants={spanVariant}
+                                 transition={{...btnTransition, delay: .2}}
                     >
                         <HiOutlineDownload className="btn2__icon"/>
                     </motion.span>
