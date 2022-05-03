@@ -4,13 +4,12 @@ import projects from '../data/projects';
 import '../styles/Projects.scss';
 
 
-const Projects = ({setScreenshotsZoomed}) => {
+const Projects = () => {
     const [zoomedProjectId, setZoomedProjectId] = useState(-1);
 
 
     const closeZoomedScreenshots = () => {
         setZoomedProjectId(-1);
-        setScreenshotsZoomed(false);
     }
 
     useDomEvent(useRef(window), "scroll", () => closeZoomedScreenshots());
@@ -20,7 +19,6 @@ const Projects = ({setScreenshotsZoomed}) => {
             closeZoomedScreenshots();
         } else {
             setZoomedProjectId(event.target.id);
-            setScreenshotsZoomed(true);
         }
     }
 
