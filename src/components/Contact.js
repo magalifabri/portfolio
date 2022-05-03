@@ -83,7 +83,7 @@ const Contact = () => {
 
 
     return (
-        <motion.section className="contact">
+        <motion.section className="contact" id="contact">
             <div className="heading">
                 <p className="contact__header heading__header">
                     Contact
@@ -149,8 +149,6 @@ const Contact = () => {
                     </motion.span>
                 </motion.a>
             </motion.div>
-
-            {/*<FaLinkedin className="btn__icon"/>*/}
         </motion.section>
     );
 };

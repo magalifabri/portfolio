@@ -6,7 +6,7 @@ import '../styles/Skills.scss';
 
 const Skills = () => {
     return (
-        <section className="skills">
+        <section className="skills" id="skills">
             <div className="heading">
                 <p className="skills__header heading__header">
                     Skills

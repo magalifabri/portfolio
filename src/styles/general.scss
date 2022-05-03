@@ -17,6 +17,10 @@ font-family: 'Nunito', sans-serif;
     //border: 1px solid lightgray;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Nunito', sans-serif;
     color: shared.$black;

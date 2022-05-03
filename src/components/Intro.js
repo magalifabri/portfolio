@@ -29,6 +29,7 @@ const Intro = () => {
 
     return (
         <motion.section className="intro"
+                        id="intro"
                         initial="startState" // for children
                         animate="endState" // for children
         >
@@ -43,7 +44,7 @@ const Intro = () => {
                           variants={childVariant}
                           transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
                 >
-                    full stack web dev student
+                    web developer
                 </motion.p>
             </motion.div>
 
@@ -51,7 +52,7 @@ const Intro = () => {
                       variants={childVariant}
                       transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
             >
-                Little intro: what can people expect to find on this page? Morbi
+                Little intro: who am I ? what's on this page? Morbi
                 sit amet ipsum ac justo dignissim elementum. Proin mollis mauris
                 vitae arcu feugiat, a ornare quam iaculis. Interdum et malesuada
                 fames ac ante ipsum primis in faucibus. Suspendisse bibendum

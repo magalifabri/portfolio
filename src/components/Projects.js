@@ -56,7 +56,7 @@ const Projects = () => {
 
     return (
         <div className="projects-background-container">
-        <section className="projects">
+        <section className="projects" id="projects">
             <div className="heading">
                 <p className="projects__header heading__header">
                     Projects
