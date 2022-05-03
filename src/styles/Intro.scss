@@ -1,12 +1,20 @@
+@use 'shared';
+
 .intro {
-    min-height: 95vh; // 100 - 5 for body padding
-    padding-bottom: 1.5rem;
+    box-sizing: content-box; // to work with vw padding and max-width in px
+    max-width: shared.$maxSectionWidth;
+    margin: 0 auto;
+    min-height: 100vh - (shared.$verticalSectionPadding * 2); // -20vh for padding
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     gap: 2rem;
+
+    &__subtitle {
+        text-align: left;
+    }
 
     &__description {
         max-width: 50ch;

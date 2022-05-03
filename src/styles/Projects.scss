@@ -1,5 +1,13 @@
+@use 'shared';
+
+.projects-background-container {
+    background-color: shared.$sectionBackgroundColor;
+}
+
 .projects {
-    padding: 1.5rem 0;
+    box-sizing: content-box; // to work with vw padding
+    max-width: shared.$maxSectionWidth;
+    margin: 0 auto;
 
     display: flex;
     flex-direction: column;
@@ -104,25 +112,13 @@ $breakPoint: 500px;
 // SCREENSHOT ZOOM
 
 .project-card__screenshots-container {
+    z-index: 0; // required to apply transition to z-index
+    transition: z-index 1s, box-shadow 1s ease; // only change z-index after 1s, otherwise other content overlaps opened screenshots on deactivation
     cursor: zoom-in;
 
-    .shade {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        pointer-events: none;
-        opacity: 0;
-        background: white;
-    }
-
-    .project-card__screenshot {
-        z-index: -1;
-        transition: z-index 1s, box-shadow 1s ease; // only change z-index after 1s, otherwise shadow overlaps image on deactivation
-    }
-
     &--open {
+        z-index: 1;
+        transition: z-index 0s; // overwrite previously set z-index transition setting
         cursor: zoom-out;
 
         .project-card__screenshots-inner-container {
@@ -131,7 +127,7 @@ $breakPoint: 500px;
             left: 0;
             right: 0;
             bottom: 0;
-            padding: 2rem;
+            padding: 1.5rem;
 
             display: flex;
             flex-direction: row;
@@ -140,12 +136,7 @@ $breakPoint: 500px;
             overflow-x: scroll;
         }
 
-        .shade {
-            pointer-events: auto;
-        }
-
         .project-card__screenshot {
-            z-index: 2;
             position: static;
             display: block;
             max-height: 90%;
@@ -155,8 +146,24 @@ $breakPoint: 500px;
                     0 0 0 3px white,
                     0 0 0 5px #eaeaea,
                     rgba(0, 0, 0, 0.45) 0px 25px 40px -40px;
-
-            transition: z-index 0s; // overwrite default z-index setting
         }
     }
 }
+
+.shade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    pointer-events: none;
+    opacity: 0;
+    background: white;
+
+    &--active {
+        pointer-events: auto;
+        z-index: 1;
+    }
+}
+

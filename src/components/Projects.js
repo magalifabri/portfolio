@@ -57,6 +57,7 @@ const Projects = ({setScreenshotsZoomed}) => {
 
 
     return (
+        <div className="projects-background-container">
         <section className="projects">
             <div className="heading">
                 <p className="projects__header heading__header">
@@ -69,6 +70,10 @@ const Projects = ({setScreenshotsZoomed}) => {
             </div>
 
             <div className="projects__cards-container">
+                <motion.div className={`shade ${zoomedProjectId !== -1 ? 'shade--active' : ''}`}
+                            animate={{opacity: zoomedProjectId !== -1 ? .9 : 0}}
+                            onClick={() => closeZoomedScreenshots()}
+                />
 
                 {projects.map((project, index) => {
                     return (
@@ -92,10 +97,6 @@ const Projects = ({setScreenshotsZoomed}) => {
                             >
                                 <div
                                     className="project-card__screenshots-inner-container">
-                                    <motion.div className="shade"
-                                                animate={{opacity: thisProjectIsOpen(index) ? .9 : 0}}
-                                                onClick={() => closeZoomedScreenshots()}
-                                    />
 
                                     {project.desktopScreenshot &&
                                         <motion.img
@@ -146,6 +147,7 @@ const Projects = ({setScreenshotsZoomed}) => {
                 })}
             </div>
         </section>
+        </div>
     );
 };
 

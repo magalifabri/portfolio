@@ -1,3 +1,4 @@
+@use 'shared';
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /*
@@ -6,9 +7,6 @@ font-family: 'Lora', serif;
 font-family: 'Noto Serif', serif;
 font-family: 'Nunito', sans-serif;
 */
-
-
-$black: #282828;
 
 
 * {
@@ -20,18 +18,16 @@ $black: #282828;
 }
 
 body {
-    padding: 5vh 5vw;
-
     font-family: 'Nunito', sans-serif;
-    color: $black;
-
-    @media only screen and (min-width: 500px) {
-        padding-right: 4rem;
-    } // todo change to 768px
+    color: shared.$black;
 }
 
 p {
     line-height: 1.5;
+}
+
+section {
+    padding: shared.$verticalSectionPadding 10vw;
 }
 
 
@@ -40,12 +36,12 @@ p {
 .btn {
     padding: .5em 1em;
 
-    border: 1px solid $black;
+    border: 1px solid shared.$black;
     border-radius: 3px;
     font-family: 'Lato', sans-serif;
 
     text-transform: uppercase;
-    color: $black;
+    color: shared.$black;
     font-size: .65rem;
     text-decoration: none;
     letter-spacing: 1px;
@@ -63,7 +59,7 @@ p {
 
     &__icon {
         font-size: 1.5rem;
-        color: $black;
+        color: shared.$black;
     }
 
     &__collapsing-content {
@@ -72,6 +68,8 @@ p {
 }
 
 .heading {
+    text-align: center;
+
     &__header {
         font-size: 3rem;
         font-family: 'Lora', serif;
@@ -79,11 +77,9 @@ p {
 
     &__subheader {
         text-transform: uppercase;
-        font-weight: 400;
+        font-weight: 300;
         word-spacing: .1rem;
+        letter-spacing: 1px;
+        font-size: .875rem;
     }
-}
-
-section + section {
-    margin-top: 5rem;
 }
