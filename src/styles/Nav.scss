@@ -1,29 +1,51 @@
+@use 'shared';
+
 .nav {
     position: fixed;
-    top: 0;
+    z-index: 1;
+    top: 1rem;
     right: 0;
-    width: 100%;
-    padding: .25rem 1rem;
-
-    background-color: #ececec;
 
     display: flex;
-    justify-content: right;
-    flex-direction: row;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: end;
+    gap: .5rem;
 
-    @media only screen and (max-width: 500px) {
-        flex-direction: column;
-    } // todo: change to 768px
+    //@media only screen and (max-width: shared.$smallScreenWidthBreakpoint) {
+    //    flex-direction: column;
+    //}
+
+    text-align: right;
 
     transition: all .3s ease;
 
     &--hidden {
-        top: -1rem;
-        opacity: 0;
+        opacity: .5;
+
+        &:hover {
+            opacity: 1;
+        }
     }
 
-    a.active {
-        color: red;
+    &__link {
+        padding: .3rem .8rem .3rem .3rem;
+
+        font-family: 'Lato', sans-serif;
+        text-transform: uppercase;
+        color: shared.$black;
+        font-size: .65rem;
+        text-decoration: none;
+        letter-spacing: 1px;
+
+        background: linear-gradient(gray, gray);
+        background-size: 0 2px;
+        background-repeat: no-repeat;
+        background-position: 100% 100%;
+
+        transition: all .3s ease;
+
+        &--active {
+            background-size: 100% 2px;
+        }
     }
 }

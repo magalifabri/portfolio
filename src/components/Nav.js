@@ -34,13 +34,13 @@ const Nav = () => {
 
     return (
         <nav className={`nav ${scrollingDown ? 'nav--hidden' : ''}`}>
-            <a className={inView === 'intro' ? 'active' : ''}
+            <a className={`nav__link nav__link${inView === 'intro' ? '--active' : ''}`}
                href="#intro">intro</a>
-            <a className={inView === 'projects' ? 'active' : ''}
+            <a className={`nav__link nav__link${inView === 'projects' ? '--active' : ''}`}
                 href="#projects">projects</a>
-            <a className={inView === 'skills' ? 'active' : ''}
+            <a className={`nav__link nav__link${inView === 'skills' ? '--active' : ''}`}
                href="#skills">skills</a>
-            <a className={inView === 'contact' ? 'active' : ''}
+            <a className={`nav__link nav__link${inView === 'contact' ? '--active' : ''}`}
                href="#contact">contact</a>
         </nav>
     );

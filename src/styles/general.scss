@@ -32,6 +32,10 @@ p {
 
 section {
     padding: shared.$verticalSectionPadding 10vw;
+
+    @media only screen and (min-width: shared.$smallScreenWidthBreakpoint) {
+        padding-right: max(10vw, 7rem);
+    }
 }
 
 
