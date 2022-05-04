@@ -1,6 +1,7 @@
 import React from 'react';
 import {motion} from "framer-motion";
 import AnimatedSvgName from "./AnimatedSvgName";
+import {BsChevronCompactDown} from "react-icons/bs";
 import '../styles/Intro.scss';
 
 
@@ -36,10 +37,6 @@ const Intro = () => {
             <motion.div className="heading">
                 <AnimatedSvgName/>
 
-                {/*<p className="intro__title heading__header">*/}
-                {/*    Magali Fabri*/}
-                {/*</p>*/}
-
                 <motion.p className="intro__subtitle heading__subheader"
                           variants={childVariant}
                           transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
@@ -65,6 +62,15 @@ const Intro = () => {
             >
                 contact
             </motion.a>
+
+            <motion.div className="intro__down-arrow-container"
+                        variants={childVariant}
+                        transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
+            >
+                <a href="#projects">
+                    <BsChevronCompactDown className="intro__down-arrow"/>
+                </a>
+            </motion.div>
         </motion.section>
     );
 };

@@ -20,4 +20,23 @@
         max-width: 50ch;
         font-size: 1.125rem;
     }
+
+    &__down-arrow-container {
+        display: none;
+    }
+
+    @media only screen and (min-height: 600px) {
+        &__down-arrow-container {
+            display: initial;
+            position: absolute;
+            bottom: .75rem;
+            left: 50%;
+
+            transform: translate(-50%, 0);
+        }
+        &__down-arrow {
+            color: gray;
+            font-size: 1.5rem;
+        }
+    }
 }
