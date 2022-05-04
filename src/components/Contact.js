@@ -6,36 +6,9 @@ import {MdOutlineEmail} from "react-icons/md";
 import '../styles/Contact.scss';
 
 
-const Contact = () => {
+const Contact = ({isSmallScreen}) => {
     const [isComplete, setIsComplete] = useState(false);
-    const [isSmallScreen, setIsSmallScreen] = useState(true);
     const {scrollYProgress} = useViewportScroll();
-
-
-    const debounce = (func, timeout = 300) => {
-        let timer;
-
-        return (...args) => {
-            clearTimeout(timer);
-            timer = setTimeout(() => {
-                func.apply(this, args);
-            }, timeout);
-        };
-    }
-
-    useEffect(() => {
-        setIsSmallScreen(window.innerWidth < 500); // todo: set to 768
-
-        const handleResize = debounce(() => {
-            setIsSmallScreen(window.innerWidth < 500); // todo: set to 768
-        }, 100);
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        }
-    }, []);
 
 
     useEffect(() => scrollYProgress.onChange(v => {
