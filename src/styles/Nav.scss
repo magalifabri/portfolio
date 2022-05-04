@@ -1,33 +1,25 @@
 @use 'shared';
 
-.nav {
-    animation: fade-in .75s ease-out 4s backwards;
+// The fade-in animations on .nav and .navToggleBtn occur regardless of mobile or desktop viewing. Even though the .nav fade-in is only visible on desktop and the .navToggleBtn only on mobile. This is done to trigger the animation-iteration-count of 1, causing the animations to not play at a later point if the window is resized.
+// The fade-in animation doesn't make use of translation(), as this causes the element to which it applies to appear on the screen (even when translation effects a different dimension than the one used to move them off the viewport).
 
-    position: fixed;
+// shared styling between mobile and desktop
+.nav {
+    animation: fade-in .75s ease-out 4s 1 backwards;
+
     z-index: 1;
-    top: 1rem;
+    position: fixed;
+    top: 0;
     right: 0;
+    padding-top: 1rem;
 
     display: flex;
     flex-direction: column;
     align-items: end;
     gap: .5rem;
 
-    //@media only screen and (max-width: shared.$smallScreenWidthBreakpoint) {
-    //    flex-direction: column;
-    //}
-
     text-align: right;
-
     transition: all .3s ease;
-
-    &--hidden {
-        opacity: .5;
-
-        &:hover {
-            opacity: 1;
-        }
-    }
 
     &__link {
         padding: .3rem .8rem .3rem .3rem;
@@ -52,14 +44,76 @@
     }
 }
 
+.navToggleBtn {
+    animation: fade-in .75s ease-out 4s 1 backwards;
+
+    z-index: 1;
+    position: fixed;
+    top: 1rem;
+    right: -1rem; // overridden in mobile styling
+}
+
+// desktop styling
+@media only screen and (min-width: shared.$smallScreenWidthBreakpoint) {
+    .nav {
+        &--hidden {
+            opacity: .5;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+// mobile styling
+@media only screen and (max-width: shared.$smallScreenWidthBreakpoint - 1) {
+    .nav {
+        height: 100%;
+        padding-left: 1.5rem;
+
+        flex-direction: column;
+        justify-content: center;
+        gap: 1.5rem;
+
+        background-color: shared.$sectionBackgroundColor;
+        border-left: 5px solid #e1e1e1;
+
+        &--hidden {
+            opacity: 0;
+            transform: translateX(7rem);
+        }
+    }
+
+    .navToggleBtn {
+        right: 1rem;
+    }
+
+    .nav-shade {
+        z-index: 1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        pointer-events: none;
+        opacity: 0;
+        background: white;
+
+        &--active {
+            pointer-events: auto;
+            opacity: 1;
+        }
+    }
+}
+
 @keyframes fade-in {
     from {
         opacity: 0;
-        transform: translateX(5px);
     }
 
     to {
         opacity: 1;
-        transform: translateX(0);
     }
 }
