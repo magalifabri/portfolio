@@ -60,10 +60,11 @@ const Nav = ({isSmallScreen}) => {
                    href="#contact">contact</a>
             </nav>
 
-            <div className="navToggleBtn"
+            <div className={`navToggleBtn ${navIsHidden() ? '' : 'navToggleBtn--active'}`}
                  onClick={() => setMobileNavOpen(!mobileNavOpen)}
             >
-                =
+                <span className="navToggleBtn__bar"></span>
+                <span className="navToggleBtn__bar"></span>
             </div>
         </>
     );
