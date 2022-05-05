@@ -56,7 +56,8 @@ const Intro = () => {
                 risus mattis leo faucibus, id luctus ligula varius.
             </motion.p>
 
-            <motion.a className="intro__contact btn" href="todo"
+            <motion.a className="intro__contact btn"
+                      href="#contact"
                       variants={childVariant}
                       transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
             >
