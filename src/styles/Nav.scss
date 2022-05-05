@@ -1,12 +1,7 @@
 @use 'shared';
 
-// The fade-in animations on .nav and .navToggleBtn occur regardless of mobile or desktop viewing. Even though the .nav fade-in is only visible on desktop and the .navToggleBtn only on mobile. This is done to trigger the animation-iteration-count of 1, causing the animations to not play at a later point if the window is resized.
-// The fade-in animation doesn't make use of translation(), as this causes the element to which it applies to appear on the screen (even when translation effects a different dimension than the one used to move them off the viewport).
-
 // shared styling between mobile and desktop
 .nav {
-    animation: fade-in .75s ease-out 4s 1 backwards;
-
     z-index: 1;
     position: fixed;
     top: 0;
@@ -45,9 +40,8 @@
 }
 
 .navToggleBtn {
-    animation: fade-in .75s ease-out 4s 1 backwards;
     position: fixed;
-    right: -100vw;
+    right: -100vw; // hide nav toggle button on desktop
 }
 
 // desktop styling
@@ -138,15 +132,5 @@
             pointer-events: auto;
             opacity: 1;
         }
-    }
-}
-
-@keyframes fade-in {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
     }
 }
