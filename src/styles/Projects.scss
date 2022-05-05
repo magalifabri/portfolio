@@ -16,15 +16,15 @@
     &__cards-container {
         display: flex;
         flex-direction: column;
-        gap: 4rem;
+        gap: 5rem;
     }
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    column-gap: 2rem;
+    gap: 1.5rem;
+    column-gap: 3rem;
 
     &__title {
         font-family: 'Libre Baskerville', serif;
@@ -35,6 +35,7 @@
         position: relative;
         width: 100%;
         height: 250px;
+        margin-bottom: 1rem;
     }
 
     &__screenshot {
@@ -60,7 +61,9 @@
         }
     }
 
-    &__description {}
+    &__description {
+        max-width: 50ch;
+    }
 
     &__links-container {
         display: flex;
@@ -69,10 +72,24 @@
     }
 }
 
-// todo: breakpoint to 768px
-$breakPoint: 500px;
+// mobile specific
+@media only screen and (max-width: shared.$smallScreenWidthBreakpoint - 1) {
+    .project-card {
+        max-width: 500px;
+        margin: 0 auto;
 
-@media only screen and (min-width: $breakPoint) {
+        &__title {
+            text-align: center;
+        }
+
+        &__links-container {
+            justify-content: center;
+        }
+    }
+}
+
+// desktop specific
+@media only screen and (min-width: shared.$smallScreenWidthBreakpoint) {
     .project-card {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -108,9 +125,7 @@ $breakPoint: 500px;
     }
 }
 
-
-// SCREENSHOT ZOOM
-
+// screenshot zoom
 .project-card__screenshots-container {
     z-index: 0; // required to apply transition to z-index
     transition: z-index 1s, box-shadow 1s ease; // only change z-index after 1s, otherwise other content overlaps opened screenshots on deactivation

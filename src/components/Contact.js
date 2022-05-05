@@ -16,7 +16,7 @@ const Contact = () => {
     }), [scrollYProgress]);
 
 
-    const areBtnsOnBottom = () => isComplete || window.innerWidth < 500; // todo: change to 768
+    const areBtnsOnBottom = () => isComplete || window.innerWidth < 768;
 
 
     const btnVariant = {

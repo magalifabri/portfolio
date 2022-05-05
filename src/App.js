@@ -22,10 +22,10 @@ function App() {
     }
 
     useEffect(() => {
-        setIsSmallScreen(window.innerWidth < 500); // todo: set to 768
+        setIsSmallScreen(window.innerWidth < 768);
 
         const handleResize = debounce(() => {
-            setIsSmallScreen(window.innerWidth < 500); // todo: set to 768
+            setIsSmallScreen(window.innerWidth < 768);
         }, 100);
 
         window.addEventListener('resize', handleResize);
