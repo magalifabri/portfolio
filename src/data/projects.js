@@ -6,6 +6,7 @@ import WeatherApp_screenshot_mobile from "../images/screenshots/WeatherApp_scree
 
 import Gitlery_screenshot_desktop from "../images/screenshots/Gitlery_screenshot_desktop.png";
 import BananaPrint_screenshot_desktop from "../images/screenshots/BananaPrint_screenshot_desktop.png";
+import CheckIt_screenshot_desktop from "../images/screenshots/CheckIt_screenshot_desktop.png";
 import MagalisFavourites_screenshot_desktop from "../images/screenshots/MagalisFavourites_screenshot_desktop.png";
 import WeatherApp_screenshot_desktop from "../images/screenshots/WeatherApp_screenshot_desktop.png";
 
@@ -43,7 +44,7 @@ const projects = [
         github: "https://github.com/magalifabri/react-intro",
         homepage: "https://check-it-app.netlify.app/",
         mobileScreenshot: CheckIt_screenshot_mobile,
-        desktopScreenshot: "", // todo: add desktop screenshot
+        desktopScreenshot: CheckIt_screenshot_desktop,
         description: "A simple to-do app with to-do list, calendar and notes.",
         features: [
             "ReactJS",
