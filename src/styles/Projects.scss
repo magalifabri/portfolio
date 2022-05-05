@@ -40,12 +40,7 @@
 
     &__screenshot {
         position: absolute;
-
         border-radius: 3px;
-        box-shadow:
-                0 0 0 3px white,
-                0 0 0 4px #eaeaea,
-                0 3px 10px rgba(0, 0, 0, 0.15);
 
         &--desktop {
             top: 1rem;
@@ -82,6 +77,11 @@
             text-align: center;
         }
 
+        &__screenshot {
+            outline: 2px solid #eaeaea;
+            border: 3px solid white;
+        }
+
         &__links-container {
             justify-content: center;
         }
@@ -107,17 +107,27 @@
                 "image description"
                 "image links";
         }
+
         &__title {
             grid-area: title;
             align-self: end;
         }
+
         &__screenshots-container {
             grid-area: image;
         }
+
+        &__screenshot {
+            outline: 1px solid #eaeaea;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+        }
+
         &__description {
             grid-area: description;
             align-self: center;
         }
+
         &__links-container {
             grid-area: links;
             align-self: start;
@@ -157,10 +167,9 @@
             max-height: 90%;
             max-width: 95%;
 
-            box-shadow:
-                    0 0 0 3px white,
-                    0 0 0 5px #eaeaea,
-                    rgba(0, 0, 0, 0.45) 0px 25px 40px -40px;
+            @media only screen and (min-width: shared.$smallScreenWidthBreakpoint) {
+                box-shadow: 0 25px 40px -40px rgba(0, 0, 0, 0.45);
+            }
         }
     }
 }
