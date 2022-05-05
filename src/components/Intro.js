@@ -49,11 +49,7 @@ const Intro = () => {
                       variants={childVariant}
                       transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
             >
-                Little intro: who am I ? what's on this page? Morbi
-                sit amet ipsum ac justo dignissim elementum. Proin mollis mauris
-                vitae arcu feugiat, a ornare quam iaculis. Interdum et malesuada
-                fames ac ante ipsum primis in faucibus. Suspendisse bibendum
-                risus mattis leo faucibus, id luctus ligula varius.
+                Hey! I'm Magali, a budding web developer with a strong attraction to clean design and cleaner code. With a critical eye for detail and buckets of hard work, I aim to build things that are a pleasure to view and interact with.
             </motion.p>
 
             <motion.a className="intro__contact btn"
