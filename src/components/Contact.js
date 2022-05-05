@@ -6,7 +6,7 @@ import {MdOutlineEmail} from "react-icons/md";
 import '../styles/Contact.scss';
 
 
-const Contact = ({isSmallScreen}) => {
+const Contact = () => {
     const [isComplete, setIsComplete] = useState(false);
     const {scrollYProgress} = useViewportScroll();
 
@@ -16,7 +16,7 @@ const Contact = ({isSmallScreen}) => {
     }), [scrollYProgress]);
 
 
-    const areBtnsOnBottom = () => isComplete || isSmallScreen;
+    const areBtnsOnBottom = () => isComplete || window.innerWidth < 500; // todo: change to 768
 
 
     const btnVariant = {
@@ -67,7 +67,10 @@ const Contact = ({isSmallScreen}) => {
             </div>
 
             <motion.div
-                className={`contact__btn-wrapper${areBtnsOnBottom() ? '--bottom' : '--side'}`}>
+                className={`contact__btn-wrapper${areBtnsOnBottom() ? '--bottom' : '--side'}`}
+                initial={{opacity: areBtnsOnBottom() ? 1 : 0}}
+                animate={{opacity: 1, transition: {delay: 4}}}
+            >
                 <motion.a className="contact__btn btn2" href="todo"
                           layout
                           variants={btnVariant}

@@ -42,7 +42,7 @@ function App() {
             <Intro/>
             <Projects/>
             <Skills/>
-            <Contact isSmallScreen={isSmallScreen}/>
+            <Contact/>
         </>
     );
 }
