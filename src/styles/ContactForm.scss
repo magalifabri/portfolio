@@ -64,5 +64,9 @@
         word-spacing: 0.1rem;
         letter-spacing: 1px;
         font-size: 0.875rem;
+
+        &--error {
+            color: red;
+        }
     }
 }

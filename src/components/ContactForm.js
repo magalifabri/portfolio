@@ -5,7 +5,7 @@ import '../styles/ContactForm.scss';
 
 
 const ContactForm = () => {
-    const [emailSent, setEmailSent] = useState(false)
+    const [statusMessage, setStatusMessage] = useState(null);
     const form = useRef();
 
 
@@ -15,24 +15,45 @@ const ContactForm = () => {
         emailjs.sendForm('service_tb6555l', 'template_ag424ot', form.current, 'h_58m2OwnzvowHZYB')
             .then((result) => {
                 console.log(result.text);
-                setEmailSent(true);
+
+                setStatusMessage(
+                    <>
+                        <p className="contact-form__message-header">Message sent</p>
+                        <p className="contact-form__message-body">I'll get back to you as soon as possible!</p>
+                    </>
+                )
+
+                e.target.reset();
+
+                setTimeout(() => {
+                    setStatusMessage(null);
+                }, 7000);
             }, (error) => {
                 console.log(error.text);
+
+                setStatusMessage(
+                    <>
+                        <p className="contact-form__message-header contact-form__message-header--error">Message not sent</p>
+                        <p className="contact-form__message-body">Try again later or use the EMAIL button above to send an email directly.</p>
+                    </>
+                )
+
+                setTimeout(() => {
+                    setStatusMessage(null);
+                }, 7000);
             });
 
-        e.target.reset();
     };
 
 
     return (
         <form className="contact-form" ref={form} onSubmit={sendEmail}>
-            {emailSent &&
+            {statusMessage &&
                 <motion.div className="contact-form__message"
-                            initial={{opacity: 0}}
-                            animate={{opacity: 1}}
+                            animate={{opacity: [0, 1, 1, 0]}}
+                            transition={{ duration: 7, times: [0, 0.05, 0.95, 1] }}
                 >
-                    <p className="contact-form__message-header">Message sent</p>
-                    <p className="contact-form__message-body">I'll get back to you as soon as possible!</p>
+                    {statusMessage}
                 </motion.div>
             }
 
