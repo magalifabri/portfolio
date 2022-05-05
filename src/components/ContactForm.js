@@ -32,7 +32,7 @@ const ContactForm = () => {
                             animate={{opacity: 1}}
                 >
                     <p className="contact-form__message-header">Message sent</p>
-                    <p className="contact-form__message-body">I'll get back to you as soon as possible</p>
+                    <p className="contact-form__message-body">I'll get back to you as soon as possible!</p>
                 </motion.div>
             }
 
