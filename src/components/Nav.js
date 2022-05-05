@@ -49,10 +49,7 @@ const Nav = ({isSmallScreen}) => {
             }
 
             <motion.nav
-                className={`nav ${navIsHidden() ? 'nav--hidden' : ''}`}
-                initial={{opacity: 0}}
-                animate={{opacity: 1, transition: {delay: 4}}}
-            >
+                className={`nav ${navIsHidden() ? 'nav--hidden' : ''}`}>
                 <a className={`nav__link nav__link${inView === 'intro' ? '--active' : ''}`}
                    href="#intro">intro</a>
                 <a className={`nav__link nav__link${inView === 'projects' ? '--active' : ''}`}
@@ -65,8 +62,6 @@ const Nav = ({isSmallScreen}) => {
 
             <motion.div className={`navToggleBtn ${navIsHidden() ? '' : 'navToggleBtn--active'}`}
                         onClick={() => setMobileNavOpen(!mobileNavOpen)}
-                        initial={{opacity: 0}}
-                        animate={{opacity: 1, transition: {delay: 4}}}
             >
                 <span className="navToggleBtn__bar"></span>
                 <span className="navToggleBtn__bar"></span>
