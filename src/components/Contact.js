@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {motion, useViewportScroll} from "framer-motion";
+import ContactForm from "./ContactForm";
 import {FaGithub} from "react-icons/fa";
 import {HiOutlineDownload} from "react-icons/hi";
 import {MdOutlineEmail} from "react-icons/md";
@@ -12,7 +13,7 @@ const Contact = () => {
 
 
     useEffect(() => scrollYProgress.onChange(v => {
-        setIsComplete(v >= .95);
+        setIsComplete(v >= .85);
     }), [scrollYProgress]);
 
 
@@ -128,6 +129,8 @@ const Contact = () => {
                     </motion.span>
                 </motion.a>
             </motion.div>
+
+            <ContactForm/>
         </motion.section>
     );
 };
