@@ -44,7 +44,7 @@ const AnimatedSvgName = () => {
         <div>
             <motion.svg width="100%"
                         height="54.5"
-                        viewBox="0 0 317.25 54.5"
+                        viewBox="0 0 317.25 55.5"
                         xmlns="http://www.w3.org/2000/svg"
             >
                 <motion.g id="svgGroup"
