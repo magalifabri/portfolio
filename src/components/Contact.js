@@ -77,11 +77,11 @@ const Contact = () => {
                           initial="toggle"
                           animate="toggle"
                           whileHover="hover"
-                          transition={btnTransition}
+                          transition={{...btnTransition, delay: .2}}
                 >
                     <motion.span className="btn2__collapsing-content"
                                  variants={spanVariant}
-                                 transition={btnTransition}
+                                 transition={{...btnTransition, delay: .2}}
                     >
                         email
                     </motion.span>
@@ -113,13 +113,13 @@ const Contact = () => {
                           initial="toggle"
                           animate="toggle"
                           whileHover="hover"
-                          transition={{...btnTransition, delay: .2}}
+                          transition={{...btnTransition, delay: .0}}
                 >
                     CV
 
                     <motion.span className="btn2__collapsing-content"
                                  variants={spanVariant}
-                                 transition={{...btnTransition, delay: .2}}
+                                 transition={{...btnTransition, delay: .0}}
                     >
                         <HiOutlineDownload className="btn2__icon"/>
                     </motion.span>
