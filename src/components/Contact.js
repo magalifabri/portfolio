@@ -13,7 +13,7 @@ const Contact = () => {
 
 
     useEffect(() => scrollYProgress.onChange(v => {
-        setIsComplete(v >= .85);
+        setIsComplete(v >= .83);
     }), [scrollYProgress]);
 
 
