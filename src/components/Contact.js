@@ -71,7 +71,9 @@ const Contact = () => {
                 initial={{opacity: areBtnsOnBottom() ? 1 : 0}}
                 animate={{opacity: 1, transition: {delay: 4}}}
             >
-                <motion.a className="contact__btn btn2" href="todo"
+                <motion.a className="contact__btn btn2"
+                          href="mailto:magali_90@live.nl"
+                          target="_blank"
                           layout
                           variants={btnVariant}
                           initial="toggle"
@@ -89,7 +91,8 @@ const Contact = () => {
                     <MdOutlineEmail className="btn2__icon"/>
                 </motion.a>
 
-                <motion.a className="contact__btn btn2" href="todo"
+                <motion.a className="contact__btn btn2"
+                          href="https://github.com/magalifabri"
                           layout
                           variants={btnVariant}
                           initial="toggle"
