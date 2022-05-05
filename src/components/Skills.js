@@ -8,9 +8,9 @@ const Skills = () => {
     return (
         <section className="skills" id="skills">
             <div className="heading">
-                <p className="skills__header heading__header">
+                <h1 className="skills__header heading__header">
                     Skills
-                </p>
+                </h1>
 
                 <p className="skills__subheader heading__subheader">
                     tools in my kit

@@ -59,9 +59,9 @@ const Contact = () => {
     return (
         <motion.section className="contact" id="contact">
             <div className="heading">
-                <p className="contact__header heading__header">
+                <h1 className="contact__header heading__header">
                     Contact
-                </p>
+                </h1>
                 <p className="contact__subheader heading__subheader">
                     find out more / get in touch
                 </p>

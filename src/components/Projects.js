@@ -58,9 +58,9 @@ const Projects = () => {
         <div className="projects-background-container">
         <section className="projects" id="projects">
             <div className="heading">
-                <p className="projects__header heading__header">
+                <h1 className="projects__header heading__header">
                     Projects
-                </p>
+                </h1>
 
                 <p className="projects__subheader heading__subheader">
                     a sampling of my work
@@ -85,11 +85,11 @@ const Projects = () => {
                                         margin: "0px 0px -100px 0px"
                                     }}
                         >
-                            <motion.p className="project-card__title"
+                            <motion.h2 className="project-card__title"
                                       variants={projectCardElementAnimation}
                             >
                                 {project.name}
-                            </motion.p>
+                            </motion.h2>
 
                             <motion.div
                                 className={`project-card__screenshots-container ${thisProjectIsOpen(index) ? 'project-card__screenshots-container--open' : ''}`}

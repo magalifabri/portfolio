@@ -30,7 +30,7 @@ body {
     color: shared.$black;
 }
 
-p {
+p, h1, h2 {
     line-height: 1.5;
 }
 
@@ -87,6 +87,7 @@ section {
     &__header {
         font-size: 3rem;
         font-family: 'Libre Baskerville', serif;
+        font-weight: 400;
     }
 
     &__subheader {
