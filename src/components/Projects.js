@@ -80,6 +80,10 @@ const Projects = () => {
                                     variants={projectCardAnimation}
                                     initial="hidden"
                                     whileInView="show"
+                                    viewport={{
+                                        once: true,
+                                        margin: "0px 0px -100px 0px"
+                                    }}
                         >
                             <motion.p className="project-card__title"
                                       variants={projectCardElementAnimation}

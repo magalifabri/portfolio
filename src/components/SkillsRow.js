@@ -25,6 +25,10 @@ const SkillsRow = ({skills}) => {
         <motion.div className="skills__cards-container"
                     initial="startState"
                     whileInView="endState"
+                    viewport={{
+                        once: true,
+                        margin: "0px 0px -50px 0px"
+                    }}
                     transition={{
                         delayChildren: .25,
                         staggerChildren: .1
