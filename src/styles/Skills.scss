@@ -19,10 +19,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    color: #4b4b4b;
 
     &__icon {
         font-size: 2rem; // icon size
-        color: #4b4b4b;
     }
 
     &__name {

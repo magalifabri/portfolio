@@ -40,7 +40,9 @@ const SkillsRow = ({skills}) => {
                                 key={index}
                                 variants={childVariant}
                     >
-                        <motion.div className="skill-card__icon-container">
+                        <motion.div className="skill-card__icon-container"
+                                    whileHover={{color: tech.color}}
+                        >
                             {tech.icon}
                         </motion.div>
 
