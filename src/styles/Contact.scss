@@ -23,7 +23,7 @@
             flex-direction: row;
             gap: 1rem;
 
-            @media only screen and (hover: hover) {
+            @media (hover: hover) {
                 .contact__btn {
                     box-shadow: 0 0 0 1px transparent;
                     transition: box-shadow .3s ease;

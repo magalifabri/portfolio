@@ -63,7 +63,7 @@ section {
 .btn {
     @extend .btn-base;
 
-    @media only screen and (hover: hover) {
+    @media (hover: hover) {
         box-shadow: 0 0 0 1px transparent;
         transition: box-shadow .3s ease;
 
