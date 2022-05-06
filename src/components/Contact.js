@@ -110,7 +110,8 @@ const Contact = () => {
                     <FiGithub className="btn2__icon"/>
                 </motion.a>
 
-                <motion.a className="contact__btn btn2" href="todo"
+                <motion.a className="contact__btn btn2"
+                          href="/CV_Magali_Fabri.pdf"
                           layout
                           variants={btnVariant}
                           initial="toggle"
