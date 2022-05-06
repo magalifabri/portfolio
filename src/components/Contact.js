@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {motion, useViewportScroll} from "framer-motion";
 import ContactForm from "./ContactForm";
-import {FaGithub} from "react-icons/fa";
 import {HiOutlineDownload} from "react-icons/hi";
 import {MdOutlineEmail} from "react-icons/md";
+import {FiGithub} from "react-icons/fi";
 import '../styles/Contact.scss';
 
 
@@ -23,7 +23,7 @@ const Contact = () => {
     const btnVariant = {
         toggle: {
             gap: areBtnsOnBottom() ? '.5rem' : 0,
-            opacity: areBtnsOnBottom() ? 1 : .7,
+            opacity: areBtnsOnBottom() ? 1 : .5,
             borderColor: areBtnsOnBottom() ? '#000' : 'rgba(255,255,255,0)',
             backgroundColor: areBtnsOnBottom() ? '#ffffff' : 'rgba(255,255,255,0)',
         },
@@ -31,7 +31,6 @@ const Contact = () => {
         hover: {
             gap: '.5rem',
             opacity: 1,
-            backgroundColor: '#fff',
             transition: {
                 duration: .25,
             },
@@ -108,7 +107,7 @@ const Contact = () => {
                         GitHub
                     </motion.span>
 
-                    <FaGithub className="btn2__icon"/>
+                    <FiGithub className="btn2__icon"/>
                 </motion.a>
 
                 <motion.a className="contact__btn btn2" href="todo"
