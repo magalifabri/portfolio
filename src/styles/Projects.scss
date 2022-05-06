@@ -36,9 +36,17 @@
         width: 100%;
         height: 250px;
         margin-bottom: 1rem;
+
+        @media (hover: hover) {
+            &:hover .project-card__screenshot {
+                outline-color: #b4b4b4;
+            }
+        }
     }
 
     &__screenshot {
+        transition: outline-color .3s ease; // for .project-card__screenshots-container hover
+
         position: absolute;
         border-radius: 3px;
 
