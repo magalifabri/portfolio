@@ -45,7 +45,7 @@ section {
 
 // STYLE MODULES
 
-.btn {
+.btn-base {
     padding: .5em 1em;
 
     border: 1px solid shared.$black;
@@ -60,8 +60,21 @@ section {
     letter-spacing: 1px;
 }
 
+.btn {
+    @extend .btn-base;
+
+    @media only screen and (hover: hover) {
+        box-shadow: 0 0 0 1px transparent;
+        transition: box-shadow .3s ease;
+
+        &:hover {
+            box-shadow: 0 0 0 1px shared.$black;
+        }
+    }
+}
+
 .btn2 {
-    @extend .btn;
+    @extend .btn-base;
 
     display: flex;
     flex-direction: row;
