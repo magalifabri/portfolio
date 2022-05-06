@@ -41,6 +41,12 @@
         &--active {
             background-size: 100% 2px;
         }
+
+        @media (hover: hover) {
+            &:hover {
+                text-shadow: .5px 0 0 shared.$black, -.5px 0 0 shared.$black;
+            }
+        }
     }
 }
 
@@ -151,3 +157,4 @@
         opacity: 1;
     }
 }
+
