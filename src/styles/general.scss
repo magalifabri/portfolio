@@ -26,6 +26,8 @@ html {
 }
 
 body {
+    min-width: 300px;
+
     font-family: 'Nunito', sans-serif;
     color: shared.$black;
 }
