@@ -105,7 +105,7 @@ const Projects = () => {
                                             className="project-card__screenshot project-card__screenshot--desktop"
                                             id={index}
                                             src={project.desktopScreenshot}
-                                            alt=""
+                                            alt={`screenshot of the project ${project.name} on desktop`}
                                             layout
                                         />
                                     }
@@ -115,7 +115,7 @@ const Projects = () => {
                                             className="project-card__screenshot project-card__screenshot--mobile"
                                             id={index}
                                             src={project.mobileScreenshot}
-                                            alt=""
+                                            alt={`screenshot of the project ${project.name} on mobile`}
                                             layout
                                         />
                                     }
