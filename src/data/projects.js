@@ -1,14 +1,14 @@
-import Gitlery_screenshot_mobile from '../images/screenshots/Gitlery_screenshot_mobile.png';
-import BananaPrint_screenshot_mobile from "../images/screenshots/BananaPrint_screenshot_mobile.png";
-import CheckIt_screenshot_mobile from "../images/screenshots/CheckIt_screenshot_mobile.png";
-import MagalisFavourites_screenshot_mobile from "../images/screenshots/MagalisFavourites_screenshot_mobile.png";
-import WeatherApp_screenshot_mobile from "../images/screenshots/WeatherApp_screenshot_mobile.png";
+import Gitlery_screenshot_mobile from '../images/screenshots/Gitlery_screenshot_mobile.webp';
+import BananaPrint_screenshot_mobile from "../images/screenshots/BananaPrint_screenshot_mobile.webp";
+import CheckIt_screenshot_mobile from "../images/screenshots/CheckIt_screenshot_mobile.webp";
+import MagalisFavourites_screenshot_mobile from "../images/screenshots/MagalisFavourites_screenshot_mobile.webp";
+import WeatherApp_screenshot_mobile from "../images/screenshots/WeatherApp_screenshot_mobile.webp";
 
-import Gitlery_screenshot_desktop from "../images/screenshots/Gitlery_screenshot_desktop.png";
-import BananaPrint_screenshot_desktop from "../images/screenshots/BananaPrint_screenshot_desktop.png";
-import CheckIt_screenshot_desktop from "../images/screenshots/CheckIt_screenshot_desktop.png";
-import MagalisFavourites_screenshot_desktop from "../images/screenshots/MagalisFavourites_screenshot_desktop.png";
-import WeatherApp_screenshot_desktop from "../images/screenshots/WeatherApp_screenshot_desktop.png";
+import Gitlery_screenshot_desktop from "../images/screenshots/Gitlery_screenshot_desktop.webp";
+import BananaPrint_screenshot_desktop from "../images/screenshots/BananaPrint_screenshot_desktop.webp";
+import CheckIt_screenshot_desktop from "../images/screenshots/CheckIt_screenshot_desktop.webp";
+import MagalisFavourites_screenshot_desktop from "../images/screenshots/MagalisFavourites_screenshot_desktop.webp";
+import WeatherApp_screenshot_desktop from "../images/screenshots/WeatherApp_screenshot_desktop.webp";
 
 
 const projects = [
