@@ -1,15 +1,10 @@
 @use 'shared';
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Libre+Baskerville&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Libre+Baskerville&family=Nunito:wght@400;500;600;700&display=swap');
 
 /*
 font-family: 'Lato', sans-serif;
-font-family: 'Lora', serif;
-font-family: 'Noto Serif', serif;
 font-family: 'Nunito', sans-serif;
-font-family: 'EB Garamond', serif;
-font-family: 'Merriweather', serif;
 font-family: 'Libre Baskerville', serif;
-
 */
 
 
@@ -17,8 +12,6 @@ font-family: 'Libre Baskerville', serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-
-    //border: 1px solid lightgray;
 }
 
 html {
