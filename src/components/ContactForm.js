@@ -58,11 +58,14 @@ const ContactForm = () => {
             }
 
             <div>
-                <label className="contact-form__label">
+                <label className="contact-form__label"
+                       htmlFor="user_name"
+                >
                     Name
                 </label>
 
                 <input className="contact-form__input-field"
+                       id="user_name"
                        type="text"
                        name="user_name"
                        required
@@ -70,11 +73,14 @@ const ContactForm = () => {
             </div>
 
             <div>
-                <label className="contact-form__label">
+                <label className="contact-form__label"
+                       htmlFor="user_email"
+                >
                     Email
                 </label>
 
                 <input className="contact-form__input-field"
+                       id="user_email"
                        type="email"
                        name="user_email"
                        required
@@ -82,12 +88,15 @@ const ContactForm = () => {
             </div>
 
             <div>
-                <label className="contact-form__label">
+                <label className="contact-form__label"
+                       htmlFor="message"
+                >
                     Message
                 </label>
 
                 <textarea
                     className="contact-form__input-field contact-form__input-field--big"
+                    id="message"
                     name="message"
                     required
                 />
