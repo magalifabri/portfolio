@@ -41,12 +41,14 @@
 
         @media (hover: hover) {
             &:hover .project-card__screenshot {
-                outline-color: #b4b4b4;
+                outline-color: gray;
             }
         }
     }
 
     &__screenshot {
+        outline: 1px solid #d0d0d0;
+        border: 3px solid white;
         transition: outline-color .3s ease; // for .project-card__screenshots-container hover
 
         position: absolute;
@@ -87,11 +89,6 @@
             text-align: center;
         }
 
-        &__screenshot {
-            outline: 2px solid #eaeaea;
-            border: 3px solid white;
-        }
-
         &__links-container {
             justify-content: center;
         }
@@ -129,8 +126,6 @@
         }
 
         &__screenshot {
-            outline: 1px solid #eaeaea;
-            border: 3px solid white;
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
         }
 
