@@ -19,13 +19,13 @@ const Intro = () => {
         },
     };
 
-   const transitionVariant = {
-       duration: .75,
-       ease: "easeOut",
-       delay: 2.75,
-   };
+    const transitionVariant = {
+        duration: .75,
+        ease: "easeOut",
+        delay: 2.75,
+    };
 
-   const staggerAmount = .25;
+    const staggerAmount = .25;
 
 
     return (
@@ -38,7 +38,7 @@ const Intro = () => {
                 <AnimatedSvgName/>
 
                 <motion.p className="intro__subtitle heading__subheader"
-                          variants={childVariant}
+                          variants={childVariant} // eslint-disable-next-line
                           transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
                 >
                     web developer
@@ -46,7 +46,7 @@ const Intro = () => {
             </motion.div>
 
             <motion.p className="intro__description"
-                      variants={childVariant}
+                      variants={childVariant} // eslint-disable-next-line
                       transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
             >
                 Hey! I'm Magali, a budding web developer with a strong attraction to clean design and cleaner code. With a critical eye for detail and buckets of hard work, I aim to build things that are a pleasure to view and interact with.
@@ -54,14 +54,14 @@ const Intro = () => {
 
             <motion.a className="intro__contact btn"
                       href="#contact"
-                      variants={childVariant}
+                      variants={childVariant} // eslint-disable-next-line
                       transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
             >
                 contact
             </motion.a>
 
             <motion.div className="intro__down-arrow-container"
-                        variants={childVariant}
+                        variants={childVariant} // eslint-disable-next-line
                         transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
             >
                 <a href="#projects">

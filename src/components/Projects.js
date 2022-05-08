@@ -24,7 +24,7 @@ const Projects = () => {
 
 
     const thisProjectIsOpen = index => {
-        return index == zoomedProjectId;
+        return index === Number(zoomedProjectId);
     }
 
 
