@@ -21,6 +21,8 @@
 }
 
 .project-card {
+    width: 100%;
+
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -51,14 +53,14 @@
         border-radius: 3px;
 
         &--desktop {
-            top: 1rem;
+            top: .5rem;
             max-width: 100%;
             height: auto;
             max-height: 250px;
         }
 
         &--mobile {
-            left: 1rem;
+            right: 0;
             width: auto;
             max-height: 100%;
         }
@@ -109,6 +111,7 @@
                 "description image"
                 "links image";
         }
+
         &:nth-child(even) {
             grid-template-areas:
                 "image title"
