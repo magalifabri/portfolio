@@ -6,7 +6,7 @@ import {FiGithub} from "react-icons/fi";
 import '../styles/Contact.scss';
 
 
-const Contact = () => {
+const Contact = ({isShortScreen}) => {
     const [isComplete, setIsComplete] = useState(false);
     const {scrollYProgress} = useViewportScroll();
 
@@ -16,7 +16,7 @@ const Contact = () => {
     }), [scrollYProgress]);
 
 
-    const areBtnsOnBottom = () => isComplete || window.innerWidth < 768;
+    const areBtnsOnBottom = () => isComplete || window.innerWidth < 768 || isShortScreen;
 
 
     const btnVariant = {

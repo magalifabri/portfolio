@@ -9,6 +9,7 @@ import './styles/general.scss';
 
 function App() {
     const [isSmallScreen, setIsSmallScreen] = useState(true);
+    const [isShortScreen, setIsShortScreen] = useState(false);
 
     const debounce = (func, timeout = 300) => {
         let timer;
@@ -23,9 +24,11 @@ function App() {
 
     useEffect(() => {
         setIsSmallScreen(window.innerWidth < 768);
+        setIsShortScreen(window.innerHeight < 300);
 
         const handleResize = debounce(() => {
             setIsSmallScreen(window.innerWidth < 768);
+            setIsShortScreen(window.innerHeight < 300);
         }, 100);
 
         window.addEventListener('resize', handleResize);
@@ -42,7 +45,7 @@ function App() {
             <Intro/>
             <Projects/>
             <Skills/>
-            <Contact/>
+            <Contact isShortScreen={isShortScreen}/>
         </>
     );
 }
