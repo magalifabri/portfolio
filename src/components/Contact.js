@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {motion, useViewportScroll} from "framer-motion";
 import ContactForm from "./ContactForm";
-import {HiOutlineDownload} from "react-icons/hi";
 import {MdOutlineEmail} from "react-icons/md";
 import {FiGithub} from "react-icons/fi";
 import '../styles/Contact.scss';
@@ -119,14 +118,17 @@ const Contact = () => {
                           whileHover="hover"
                           transition={{...btnTransition, delay: .0}}
                 >
-                    CV
-
                     <motion.span className="btn2__collapsing-content"
                                  variants={spanVariant}
                                  transition={{...btnTransition, delay: .0}}
                     >
-                        <HiOutlineDownload className="btn2__icon"/>
+                        resume
                     </motion.span>
+
+                    <img className="btn2__icon btn2__icon--png"
+                         src="https://img.icons8.com/material-outlined/96/282828/open-resume.png"
+                         alt="simple icon of resume with down arrow to indicate download"
+                    />
                 </motion.a>
             </motion.div>
 

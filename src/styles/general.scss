@@ -81,6 +81,10 @@ section {
     &__icon {
         font-size: 1.5rem;
         color: shared.$black;
+
+        &--png {
+            width: 1.5rem;
+        }
     }
 
     &__collapsing-content {
