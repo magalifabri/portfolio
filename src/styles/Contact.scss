@@ -17,6 +17,14 @@ $btnWrapperWidthBreakpoint: 400px;
 
     background-color: shared.$sectionBackgroundColor;
 
+    &__subheader {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: .3rem;
+    }
+
     &__btn-wrapper {
         display: flex;
         justify-content: center;

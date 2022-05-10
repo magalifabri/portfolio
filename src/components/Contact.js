@@ -60,8 +60,10 @@ const Contact = ({isShortScreen}) => {
                 <h1 className="contact__header heading__header">
                     Contact
                 </h1>
+
                 <p className="contact__subheader heading__subheader">
-                    find out more / get in touch
+                    <span>find out more</span>
+                    <span>/ get in touch</span>
                 </p>
             </div>
 
