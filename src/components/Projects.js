@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react';
 import {motion, useDomEvent} from "framer-motion";
+import ProjectCard from "./Projects.ProjectCard";
 import projects from '../data/projects';
 import '../styles/Projects.scss';
 
@@ -28,127 +29,36 @@ const Projects = () => {
     }
 
 
-    const projectCardAnimation = {
-        hidden: {},
-        show: {
-            transition: {
-                delayChildren: .25,
-                staggerChildren: .15,
-            }
-        }
-    }
-
-    const projectCardElementAnimation = {
-        hidden: {
-            opacity: 0,
-            y: 10
-        },
-        show: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                ease: "easeOut",
-                duration: .5,
-            }
-        },
-    }
-
-
     return (
         <div className="projects-background-container">
-        <section className="projects" id="projects">
-            <div className="heading">
-                <h1 className="projects__header heading__header">
-                    Projects
-                </h1>
+            <section className="projects" id="projects">
+                <div className="heading">
+                    <h1 className="projects__header heading__header">
+                        Projects
+                    </h1>
 
-                <p className="projects__subheader heading__subheader">
-                    a sampling of my work
-                </p>
-            </div>
+                    <p className="projects__subheader heading__subheader">
+                        a sampling of my work
+                    </p>
+                </div>
 
-            <div className="projects__cards-container">
-                <motion.div className={`shade ${zoomedProjectId !== -1 ? 'shade--active' : ''}`}
-                            animate={{opacity: zoomedProjectId !== -1 ? .9 : 0}}
-                            onClick={() => closeZoomedScreenshots()}
-                />
+                <div className="projects__cards-container">
+                    <motion.div
+                        className={`shade ${zoomedProjectId !== -1 ? 'shade--active' : ''}`}
+                        animate={{opacity: zoomedProjectId !== -1 ? .9 : 0}}
+                        onClick={() => closeZoomedScreenshots()}
+                    />
 
-                {projects.map((project, index) => {
-                    return (
-                        <motion.div className="project-card"
-                                    key={index}
-                                    variants={projectCardAnimation}
-                                    initial="hidden"
-                                    whileInView="show"
-                                    viewport={{
-                                        once: true,
-                                        margin: "0px 0px -100px 0px"
-                                    }}
-                        >
-                            <motion.h2 className="project-card__title"
-                                      variants={projectCardElementAnimation}
-                            >
-                                {project.name}
-                            </motion.h2>
-
-                            <motion.div
-                                className={`project-card__screenshots-container ${thisProjectIsOpen(index) ? 'project-card__screenshots-container--open' : ''}`}
-                                id={index}
-                                variants={projectCardElementAnimation}
-                                onClick={toggleZoom}
-                            >
-                                <div
-                                    className="project-card__screenshots-inner-container">
-
-                                    {project.desktopScreenshot &&
-                                        <motion.img
-                                            className="project-card__screenshot project-card__screenshot--desktop"
-                                            id={index}
-                                            src={project.desktopScreenshot}
-                                            alt={`screenshot of the project ${project.name} on desktop`}
-                                            layout
-                                        />
-                                    }
-
-                                    {project.mobileScreenshot &&
-                                        <motion.img
-                                            className="project-card__screenshot project-card__screenshot--mobile"
-                                            id={index}
-                                            src={project.mobileScreenshot}
-                                            alt={`screenshot of the project ${project.name} on mobile`}
-                                            layout
-                                        />
-                                    }
-                                </div>
-                            </motion.div>
-
-                            <motion.p className="project-card__description"
-                                      variants={projectCardElementAnimation}
-                            >
-                                {project.description}
-                            </motion.p>
-
-                            <motion.div
-                                className="project-card__links-container"
-                                variants={projectCardElementAnimation}
-                            >
-                                <a className="project-card__link btn"
-                                   href={project.github}
-                                >
-                                    source code
-                                </a>
-
-                                <a className="project-card__link btn"
-                                   href={project.homepage}
-                                >
-                                    homepage
-                                </a>
-                            </motion.div>
-                        </motion.div>
-                    )
-                })}
-            </div>
-        </section>
+                    {projects.map((project, index) =>
+                        <ProjectCard key={index}
+                                     project={project}
+                                     index={index}
+                                     toggleZoom={toggleZoom}
+                                     thisProjectIsOpen={thisProjectIsOpen}
+                        />
+                    )}
+                </div>
+            </section>
         </div>
     );
 };
