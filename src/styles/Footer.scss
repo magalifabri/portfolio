@@ -1,7 +1,7 @@
 @use 'shared';
 
 .footer {
-    padding: shared.$verticalSectionPadding 1rem;
+    padding: max(2rem, shared.$verticalSectionPadding / 2) 1rem;
 
     display: flex;
     flex-direction: column;
