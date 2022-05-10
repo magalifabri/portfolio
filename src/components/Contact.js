@@ -12,7 +12,7 @@ const Contact = ({isShortScreen}) => {
 
 
     useEffect(() => scrollYProgress.onChange(v => {
-        setIsComplete(v >= .83);
+        setIsComplete(v >= .80);
     }), [scrollYProgress]);
 
 
