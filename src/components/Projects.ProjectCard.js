@@ -8,7 +8,6 @@ const ProjectCard = ({project, index, toggleZoom, thisProjectIsOpen}) => {
         hidden: {},
         show: {
             transition: {
-                delayChildren: .25,
                 staggerChildren: .15,
             }
         }
@@ -22,11 +21,12 @@ const ProjectCard = ({project, index, toggleZoom, thisProjectIsOpen}) => {
         show: {
             opacity: 1,
             y: 0,
-            transition: {
-                ease: "easeOut",
-                duration: .5,
-            }
         },
+    }
+
+    const projectCardElementTransition = {
+        ease: "easeOut",
+        duration: .5,
     }
 
 
@@ -42,6 +42,7 @@ const ProjectCard = ({project, index, toggleZoom, thisProjectIsOpen}) => {
         >
             <motion.h2 className="project-card__title"
                        variants={projectCardElementAnimation}
+                       transition={{...projectCardElementTransition, delay: window.innerWidth < 768 ? .15 : 0}}
             >
                 {project.name}
             </motion.h2>
@@ -49,8 +50,9 @@ const ProjectCard = ({project, index, toggleZoom, thisProjectIsOpen}) => {
             <motion.div
                 className={`project-card__screenshots-container ${thisProjectIsOpen(index) ? 'project-card__screenshots-container--open' : ''}`}
                 id={index}
-                variants={projectCardElementAnimation}
                 onClick={toggleZoom}
+                variants={projectCardElementAnimation}
+                transition={projectCardElementTransition}
             >
                 <div className="project-card__screenshots-inner-container">
                     <motion.img
@@ -73,12 +75,14 @@ const ProjectCard = ({project, index, toggleZoom, thisProjectIsOpen}) => {
 
             <motion.p className="project-card__description"
                       variants={projectCardElementAnimation}
+                      transition={projectCardElementTransition}
             >
                 {project.description}
             </motion.p>
 
             <motion.div className="project-card__links-container"
                         variants={projectCardElementAnimation}
+                        transition={projectCardElementTransition}
             >
                 <a className="project-card__link btn"
                    href={project.github}
