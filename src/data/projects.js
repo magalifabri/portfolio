@@ -15,7 +15,7 @@ const projects = [
     {
         name: "Gitlery",
         github: "https://github.com/magalifabri/gitlery",
-        homepage: "https://gitlery.cyclic.app/",
+        homepage: "https://gitlery.cyclic.app/load-gitlery/magalifabri",
         mobileScreenshot: Gitlery_screenshot_mobile,
         desktopScreenshot: Gitlery_screenshot_desktop,
         description: "Gitlery checks the GitHub repositories for a given username and looks for a screenshot in each readme. With the found screenshots it creates an image gallery (a gitlery). Modal windows provide additional information on the repository's project.",
