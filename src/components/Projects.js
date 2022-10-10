@@ -38,7 +38,7 @@ const Projects = () => {
                     </h1>
 
                     <p className="projects__subheader heading__subheader">
-                        a sampling of my work
+                        a sample of my work
                     </p>
                 </div>
 

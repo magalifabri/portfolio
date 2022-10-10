@@ -41,7 +41,7 @@ const Intro = () => {
                           variants={childVariant} // eslint-disable-next-line
                           transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
                 >
-                    web developer
+                    junior developer
                 </motion.p>
             </motion.div>
 
@@ -49,7 +49,7 @@ const Intro = () => {
                       variants={childVariant} // eslint-disable-next-line
                       transition={transitionVariant.delay += staggerAmount, {...transitionVariant}}
             >
-                Hey! I'm Magali, a budding web developer with a strong attraction to clean design and cleaner code. With a critical eye for detail and buckets of hard work, I aim to build things that are a pleasure to view and interact with.
+                Hey! I'm Magali, a junior developer with a strong attraction to clean design and cleaner code. With a critical eye for detail and lots of hard work, I aim to build things that are a pleasure to view and interact with.
             </motion.p>
 
             <motion.a className="intro__contact btn"
